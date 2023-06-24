@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import Head from 'next/head';
+import Script from 'next/script';
 import React, { FC, ReactNode, useEffect, useState } from 'react'
 import FavIcon from '../../assets/images/favicon.png';
 
@@ -28,7 +30,14 @@ const Layout: FC<ILayoutProps> = ({ title, children }) => {
         <link rel="shortcut icon" type="image/png" href={FavIcon.src} />
       </Head>
 
-      {children}
+      <Script
+        strategy='beforeInteractive'
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`}
+      ></Script>
+
+      <div style={{ maxWidth: 480, }} className='mx-auto relative overflow-hidden'>
+        {isLoading ? <Loader /> : children}
+      </div>
     </div>
   )
 }
