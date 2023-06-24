@@ -29,6 +29,8 @@ const Layout: FC<ILayoutProps> = ({ title, children }) => {
         <meta name="description" content="Taxi App" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" type="image/png" href={FavIcon.src} />
+
+        <meta name='theme-color' content='#ffbc00' />
       </Head>
 
       <Script
