@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import React, { FC, ReactNode, useEffect, useState } from 'react'
 import FavIcon from '../../assets/images/favicon.png';
+import Loader from '../ui/Loader';
 
 interface ILayoutProps {
   title: string
